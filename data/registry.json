@@ -2,7 +2,7 @@
   {
     "id": "lib1",
     "name": "Thư viện 1",
-    "mangaListUrl": "https://github.com/thuvientruyenmau/mangacolor-library-1/tree/main/manga.json"
+    "mangaListUrl": "https://raw.githubusercontent.com/thuvientruyenmau/mangacolor-library-1/tree/main/manga.json"
   },
   {
     "id": "lib2",
