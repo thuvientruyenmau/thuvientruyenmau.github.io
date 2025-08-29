@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MangaColor - Thư viện</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/mangacolor_logo.png" alt="MangaColor Logo" />
+        <span>MangaColor</span>
+      </a>
+    </div>
+    <div class="search-box">
+      <input id="searchInput" placeholder="🔍 Tìm truyện..." />
+      <button onclick="searchManga()">Tìm</button>
+      <button id="clearBtn" style="display:none" onclick="clearSearch()">Xóa</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="manga-grid" class="manga-grid"></div>
+    <div id="pagination" class="pagination"></div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    initIndex();   // khởi động trang chủ
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "lib1",
+    "name": "Thư viện 1",
+    "mangaListUrl": "https://raw.githubusercontent.com/username/mangacolor-library-1/main/manga.json"
+  },
+  {
+    "id": "lib2",
+    "name": "Thư viện 2",
+    "mangaListUrl": "https://raw.githubusercontent.com/username/mangacolor-library-2/main/manga.json"
+  }
+]

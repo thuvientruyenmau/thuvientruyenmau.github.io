@@ -1,0 +1,282 @@
+/* ========== Reset chung ========== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ========== Header ========== */
+header {
+  background: linear-gradient(90deg, #222, #444);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo + chữ */
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.logo img {
+  height: 45px;       /* ép chiều cao logo */
+  width: auto !important;   /* giữ tỉ lệ gốc, không bị kéo ngang */
+  margin-right: 10px;
+  display: inline-block;
+}
+
+
+
+.logo span {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Tìm kiếm */
+.search-box {
+  display: flex;
+  gap: 5px;
+}
+
+.search-box input {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #ff6600;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #ff8533;
+}
+
+/* ========== Lưới truyện (trang chủ) ========== */
+.manga-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* căn giữa card khi ít truyện */
+  gap: 20px;
+  padding: 20px;
+}
+
+.manga-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px; /* cố định chiều rộng card */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+.manga-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Ảnh bìa */
+.manga-card img {
+  width: 100%;
+  height: 280px;          /* đồng bộ chiều cao ảnh */
+  object-fit: contain;    /* hiển thị toàn bộ ảnh */
+  background: #fafafa;    /* nền để không bị trống */
+  display: block;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+
+/* Overlay hover */
+.manga-card::after {
+  content: "Xem chi tiết";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 280px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 16px;
+}
+
+.manga-card:hover img {
+  transform: scale(1.05); /* phóng to nhẹ */
+}
+
+.manga-card:hover::after {
+  opacity: 1;
+}
+
+/* Tên truyện */
+.manga-card h3 {
+  font-size: 15px;
+  padding: 8px;
+  margin: 0;
+  color: #333;
+  background: #fafafa;
+}
+
+/* ========== Pagination ========== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.pagination button,
+.pagination span {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.pagination button:hover {
+  background: #eee;
+}
+
+.pagination button.active {
+  background: #444;
+  color: #fff;
+  border-color: #444;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========== Chi tiết truyện ========== */
+.manga-detail {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.manga-detail img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.manga-detail h2 {
+  margin: 10px 0 20px;
+  font-size: 24px;
+  color: #222;
+}
+
+.chapter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.chapter-list li {
+  background: #f5f5f5;
+  border-radius: 8px;
+  transition: 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.chapter-list li:hover {
+  background: #eaeaea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.chapter-list a {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #007BFF;
+  font-size: 16px;
+}
+
+.chapter-list a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 992px) {
+  .manga-grid {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .manga-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .search-box input {
+    flex: 1;
+    width: 100%;
+  }
+
+  .manga-detail {
+    padding: 15px;
+  }
+
+  .manga-detail h2 {
+    font-size: 20px;
+  }
+
+  .chapter-list a {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
